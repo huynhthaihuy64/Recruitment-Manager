@@ -1,14 +1,21 @@
 <?php
 $servername = "localhost";
-$database = "qltd";
 $username = "root";
 $password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+$dbname = "qltd";
+
+// tạo kết nối
+$conn = new mysqli($servername, $username, $password, $dbname);
+// kiểm kết nối
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
-mysqli_close($conn);
-?>
+
+$sql = "SELECT id, name, email, password FROM users";
+$result = $conn->query($sql);
+
+$columns = ['id', 'name', 'email', 'password', 'role'];
+foreach ($columns as $value) {
+    echo "$value <br>";
+}
+$conn->close();

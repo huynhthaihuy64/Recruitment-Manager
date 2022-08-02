@@ -1,5 +1,5 @@
 <?php
-require "C:\laragon\www\QLTD\Database\connect.php";
+require "C:\laragon\www\Recruitment-Manager\Database\connect.php";
 
 if (isset($_POST['dangky'])) {
 

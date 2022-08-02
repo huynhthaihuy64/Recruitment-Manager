@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <p class="login-box-msg">Submit your cv</p>
 
-                    <form action="../Controller/Cv/submit_cv.php" method="POST">
+                    <form action="../Controller/Cv/submit_cv.php" method="POST" enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <input type="text" name="name" class="form-control" placeholder="Name">
                             <div class="input-group-append">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="file" name="cv" class="form-control" placeholder="Retype password">
+                            <input type="file" name="cv" class="form-control" placeholder="Input File">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fa-solid fa-file"></span>

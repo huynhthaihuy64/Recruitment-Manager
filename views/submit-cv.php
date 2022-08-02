@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Submit CV</title>
+    <link rel="stylesheet" href="../Public/css/login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
@@ -15,50 +15,48 @@
             <!-- /.login-logo -->
             <div class="login-card card-primary">
                 <div class="card-header text-center">
-                    <a href="../../index2.html" class="h1"><b>Login</b></a>
+                    <a href="../../index2.html" class="h1"><b>Submit CV</b></a>
                 </div>
                 <div class="card-body">
-                    <p class="login-box-msg">Sign in to start your session</p>
+                    <p class="login-box-msg">Submit your cv</p>
 
-                    <form action="../../index3.html" method="post">
+                    <form action="../Controller/Cv/submit_cv.php" method="POST">
+                        <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="input-group mb-3">
                             <input type="email" name="email" class="form-control" placeholder="Email">
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-envelope"></span>
+                                    <i class="fa-solid fa-envelope"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone">
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-lock"></span>
+                                    <i class="fa-solid fa-phone"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="icheck-primary">
-                                    <input type="checkbox" id="remember">
-                                    <label for="remember">
-                                        Remember Me
-                                    </label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="cv" class="form-control" placeholder="Retype password">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa-solid fa-file"></span>
                                 </div>
                             </div>
-                            <!-- /.col -->
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                            </div>
-                            <!-- /.col -->
+                        </div>
+                        <div class="text-center mt-3 mb-3">
+                            <button type="submit" name="upload" class="btn btn-primary btn-block">Submit CV</button>
                         </div>
                     </form>
-
-                    <div class="text-center mt-3 mb-3">
-                        <a href="#" class="btn btn-block btn-danger">
-                            <i class="fa-solid fa-key mr-2"></i>Forgot password
-                        </a>
-                    </div>
                 </div>
                 <!-- /.card-body -->
             </div>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Forgot Password</title>
 
-    <link rel="stylesheet" href="../css/forgot-password.css">
+    <link rel="stylesheet" href="../Public/css/forgot-password.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
@@ -18,7 +18,7 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
-                <form action="recover-password.html" method="post">
+                <form action="../Controller/UserController/reset_password.php" method="get">
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
@@ -35,7 +35,7 @@
                     </div>
                 </form>
                 <p class="mt-3 mb-1">
-                    <a href="login.html">Login</a>
+                    <a href="./login.php">Login</a>
                 </p>
             </div>
             <!-- /.login-card-body -->

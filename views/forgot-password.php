@@ -14,7 +14,7 @@
     <div class="login-box">
         <div class="login-card card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Find Email</b></a>
+                <a href="#" class="h1"><b>Find Email</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>

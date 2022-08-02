@@ -15,7 +15,7 @@
             <!-- /.login-logo -->
             <div class="login-card card-primary">
                 <div class="card-header text-center">
-                    <a href="../../index2.html" class="h1"><b>Login</b></a>
+                    <a href="#" class="h1"><b>Login</b></a>
                 </div>
                 <div class="card-body">
                     <p class="login-box-msg">Sign in to start your session</p>

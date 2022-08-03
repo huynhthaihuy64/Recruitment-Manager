@@ -84,7 +84,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                                 <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a href="#" class="btn btn-danger btn-sm">
+                                <a class="btn btn-danger btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>

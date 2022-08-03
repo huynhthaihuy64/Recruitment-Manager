@@ -31,17 +31,17 @@ include 'C:\laragon\www\Recruitment-Manager\controller\UserController\list.php';
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
-                    $sn = 1;
+                    $id = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $sn; ?></td>
+                            <td><?php echo $id; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['password'] ?? ''; ?></td>
                             <td><?php echo $data['role'] ?? ''; ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
+                                <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
                                 <a href="#" class="btn btn-danger btn-sm">

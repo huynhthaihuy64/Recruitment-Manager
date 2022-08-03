@@ -17,32 +17,34 @@ session_start();
     <header>
         <div class="container-fluid">
             <div class="l-sidebar" id="sidebar">
-                <div class="sidebar mt-5">
-                    <div>
-                        <a href="./index.php" class="sidebar__logo">
+            <div class="wrapper">
+                <nav id="sidebar">
+                <a href="./index.php" class="sidebar__logo">
                             <img src="../../Public/img/mor.jpg.png" alt="Insullusion" class="sidebar__logo-icon">
                         </a>
                         <div class="sidebar__toggle" id="sidebar-toggle">
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                         </div>
-                        <ul class="sidebar__list mt-5">
-                            <a href="#" class=" sidebar__link active">
-                                <i class="fa-solid fa-house mr-3 ml-1"></i>
-                                <span class="sidebar__text">Home</span>
-                            </a>
-                            <a href="#" class="sidebar__link active user-btn">
-                                <i class="fa-solid fa-user mr-3 ml-1"></i>
-                                <span class="sidebar__text">User</span>
-                                <i class="fa-solid fa-chevron-down ml-4"></i>
-                            </a>
-                            <a href="#" class="sidebar__link active">
-                                <i class="fa-solid fa-file mr-4 ml-1"></i>
-                                <span class="sidebar__text">CV</span>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <ul class="sidebar__list components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">User</a>
+                    <ul class="collapse" id="homeSubmenu">
+                        <li>
+                            <a href="./User/list.php" class="sidebar__link w-50" aria-expanded="false">List User</a>
+                        </li>
+                    </ul> 
+                </li>
+                <li class="active">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">Cv</a>
+                    <ul class="collapse" id="pageSubmenu">
+                        <li>
+                            <a href="./CV/list.php" class="sidebar__link w-50">List CV</a>
+                        </li>
+                    </ul> 
+                </li>
+            </ul>
+        </nav>
+    </div>
             <nav class="navbar justify-content-end">
                 <ul class="navbar__links">
                     <li class="navbar__link"><a>

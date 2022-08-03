@@ -11,7 +11,8 @@ const showMenu = (toggleId, sidebarId) => {
 }
 showMenu('sidebar-toggle', 'sidebar');
 
-// Modal
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+
+// Dropdown
+$('.user-btn').click(function(){
+    $('.user-show').toggleClass("show");
+});

@@ -53,6 +53,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="input-group mb-3">
+                            <input type="text" name="position" class="form-control" placeholder="Position">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa-solid fa-plus"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="date" name="date" class="form-control" placeholder="Position">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa-solid fa-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="text-center mt-3 mb-3">
                             <button type="submit" name="upload" class="btn btn-primary btn-block">Submit CV</button>
                         </div>

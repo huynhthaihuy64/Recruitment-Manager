@@ -4,39 +4,73 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Submit CV</title>
-    <link rel="stylesheet" href="../Public/css/login.css">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="../../../Public/css/login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
-<body class="login-page">
-    <div id="content" class="container text-center">
-        <h1> Edit CV </h1>
-    </div>
-    <div class="align-items-center justify-content-center">
-        <form action="" method="post">
-            <input type="hidden" name="_method" value="put" />
-            <div class="form-group ">
-                Name: <input type="text" name="name" placeholder="input name"><br>
-                Email: <input type="email" name="email" placeholder="input email"><br>
-                Phone: <input type="text" name="phone" placeholder="input phone"><br>
-                File: <input type="file" name="file"><br>
-            </div>
-            <div class="form-group d-flex">
-                <label>Kích Hoạt</label>
-                <div class="custom-control custom-radio ml-3">
-                    <input class="custom-control-input" value="1" type="radio" id="active" name="active">
-                    <label for="active" class="custom-control-label">Có</label>
+<body style="background-color: #e9ecef;">
+    <div class="container">
+        <div class="mt-5 d-flex justify-content-center">
+            <div class="card-primary border border-primary" style="width: 40%; margin-top: 220px;">
+                <div class="card-header text-center">
+                    <a href="#" class="h1"><b>Edit CV</b></a>
                 </div>
-                <div class="custom-control custom-radio ml-3">
-                    <input class="custom-control-input" value="0" type="radio" id="no_active" name="active">
-                    <label for="no_active" class="custom-control-label">Không</label>
+                <div class="card-body">
+                    <form action="../../../controller/Cv/update.php" method="POST">
+                        <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" name="cv" class="form-control" placeholder="Input File">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa-solid fa-file"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label>Active:</label>
+                            <div class="custom-control custom-radio ml-5">
+                                <input class="custom-control-input" value="1" type="radio" id="active" name="role">
+                                <label for="active" class="custom-control-label">Có</label>
+                            </div>
+                            <div class="custom-control custom-radio ml-5">
+                                <input class="custom-control-input" value="0" type="radio" id="no_active" name="role">
+                                <label for="no_active" class="custom-control-label">Không</label>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 mb-3">
+                            <button type="submit" name="update" class="btn btn-primary btn-block">Save</button>
+                        </div>
+                    </form>
                 </div>
+                <!-- /.card-body -->
             </div>
-            <div class="form-group ">
-                <button style="height:40px; width:100px" name="submitCV" class=" ml-2 btn-warning" type="submit">Lưu</button>
-            </div>
-        </form>
+            <!-- /.card -->
+        </div>
+        <!-- /.login-box -->
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

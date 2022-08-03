@@ -48,7 +48,7 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-4">
-                                <button type="submit" name="dangnhap" class="btn btn-primary btn-block">Sign In</button>
+                                <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
                             </div>
                             <!-- /.col -->
                         </div>

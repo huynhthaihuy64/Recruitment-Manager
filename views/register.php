@@ -55,18 +55,18 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" name="dangky" class="btn btn-primary btn-block">Register</button>
+                            <button type="submit" name="register" class="btn btn-primary btn-block">Register</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
 
                 <div class="social-auth-links text-center mt-3">
-                    <a href="#" class="btn btn-block btn-primary">
+                    <a href="./login.php" class="btn btn-block btn-primary">
                         <i class="fa-solid fa-circle-arrow-left mr-1"></i>
                         Return Login Page
                     </a>
-                    <a href="#" class="btn btn-block btn-danger">
+                    <a href="./forgot-password.php" class="btn btn-block btn-danger">
                         <i class="fa-solid fa-key mr-2"></i>Forgot password
                     </a>
                 </div>

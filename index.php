@@ -30,7 +30,7 @@
                             }
                             ?>
                             <li class="navbar__link"><a href="./views/register.php">Register</a></li>
-                            <li class="navbar__link"><a href="../submit-cv.php">Submit CV</a></li>
+                            <li class="navbar__link"><a href="./views/submit-cv.php">Submit CV</a></li>
                         </ul>
                     </nav>
                 </div>

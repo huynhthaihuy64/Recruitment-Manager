@@ -1,0 +1,1 @@
+<h1>Cảm ơn bạn đã tham gia phỏng vấn công ty chúng tôi. Nếu bạn có thể phỏng vấn trước 6pm thì hãy confirm mail này</h1>

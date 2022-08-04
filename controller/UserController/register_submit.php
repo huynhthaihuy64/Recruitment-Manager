@@ -17,7 +17,7 @@ if (isset($_POST['register'])) {
         try {
             $sql = "INSERT INTO users (name, email, password,role) VALUES ('$username', '$email', '$password',1)";
             $pdo->exec($sql);
-            echo "<SCRIPT> //not showing me this
+            echo "<SCRIPT>
             alert('Register Success')
             window.location.replace('http://localhost/Recruitment-Manager/index.php');
             </SCRIPT>";

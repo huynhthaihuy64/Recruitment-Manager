@@ -10,37 +10,49 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List CV</title>
-    <link rel="stylesheet" href="../../../Public/css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../Public/css/main.css">
+    <link rel=" stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
 
     <div class="container-fluid">
         <div class="l-sidebar" id="sidebar">
-            <div class="sidebar mt-5">
-                <div>
+            <div class="wrapper">
+                <nav id="sidebar">
                     <a href="./index.php" class="sidebar__logo">
-                        <img src="../../../Public/img/mor.jpg.png" alt="Insullusion" class="sidebar__logo-icon">
+                        <img src="../../Public/img/mor.jpg.png" alt="Insullusion" class="sidebar__logo-icon">
                     </a>
                     <div class="sidebar__toggle" id="sidebar-toggle">
                         <i class="fa-solid fa-arrow-right-arrow-left"></i>
                     </div>
-                    <ul class="sidebar__list mt-5">
-                        <a href="#" class=" sidebar__link active">
-                            <i class="fa-solid fa-house mr-3 ml-1"></i>
-                            <span class="sidebar__text">Home</span>
-                        </a>
-                        <a href="#" class="sidebar__link active">
-                            <i class="fa-solid fa-user mr-3 ml-1"></i>
-                            <span class="sidebar__text">User</span>
-                        </a>
-                        <a href="#" class="sidebar__link active">
-                            <i class="fa-solid fa-file mr-4 ml-1"></i>
-                            <span class="sidebar__text">CV</span>
-                        </a>
+                    <ul class="sidebar__list components">
+                        <li class="active">
+                            <a href="#listUser" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">User</a>
+                            <ul class="collapse" id="listUser">
+                                <li>
+                                    <a href="./listUser.php" class="sidebar__link w-50" aria-expanded="false">List User</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="#listCv" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">Cv</a>
+                            <ul class="collapse" id="listCv">
+                                <li>
+                                    <a href="./listCv.php" class="sidebar__link w-50">List CV</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="#listConfirm" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">Confirm Schedule</a>
+                            <ul class="collapse" id="listConfirm">
+                                <li>
+                                    <a href="./listConfirm.php" class="sidebar__link w-50">List Confirm</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </div>
     </div>
@@ -63,11 +75,11 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
-                    $sn = 1;
+                    $i = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $sn; ?></td>
+                            <td><?php echo $i; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['phone'] ?? ''; ?></td>
@@ -81,17 +93,19 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                                 }
                                 ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
+                                <a class="btn btn-primary btn-sm" href="./editCv.php/id=<?php echo "$i"  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
                                 <a href="#" class="btn btn-danger btn-sm">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
-                            <td></td>
+                            <td><a class="btn btn-success btn-sm" href="#">
+                                    Send Mail
+                                </a></td>
                         </tr>
                     <?php
-                        $sn++;
+                        $i++;
                     }
                 } else { ?>
                     <tr>
@@ -108,6 +122,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/9ff611514c.js" crossorigin="anonymous"></script>
+    <script src="../../Public/js/main.js"></script>
 </body>
 
 </html>

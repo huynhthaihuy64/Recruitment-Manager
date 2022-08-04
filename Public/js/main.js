@@ -10,9 +10,3 @@ const showMenu = (toggleId, sidebarId) => {
     }
 }
 showMenu('sidebar-toggle', 'sidebar');
-
-
-// Dropdown
-$('.user-btn').click(function(){
-    $('.user-show').toggleClass("show");
-});

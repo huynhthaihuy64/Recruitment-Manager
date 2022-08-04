@@ -16,7 +16,7 @@ if (isset($_POST["upload"])) {
     try {
         $sql = "INSERT INTO cvs (name, email, phone,file,position,date,active) VALUES ('$name', '$email', '$phone','$pname','$position','$date',1)";
         $pdo->exec($sql);
-        echo "<SCRIPT> //not showing me this
+        echo "<SCRIPT>
             alert('Submit Success')
             window.location.replace('http://localhost/Recruitment-Manager/views/admin/index.php');
             </SCRIPT>";

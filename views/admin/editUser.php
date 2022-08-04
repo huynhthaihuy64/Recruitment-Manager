@@ -1,3 +1,10 @@
+<?php
+//getting id from url
+$id = $_GET['id'];
+echo "id = {$id}";
+$name = $_GET['name'];
+echo "id ={$name}"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,12 +21,12 @@
         <div class="mt-5 d-flex justify-content-center">
             <div class="card-primary border border-primary" style="width: 40%; margin-top: 220px;">
                 <div class="card-header text-center">
-                    <a href="#" class="h1"><b>Edit CV</b></a>
+                    <a href="#" class="h1"><b>Edit User</b></a>
                 </div>
                 <div class="card-body">
-                    <form action="../../../controller/Cv/update.php" method="POST">
+                    <form action="./editUser.php" method="POST">
                         <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -35,23 +42,15 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="phone" class="form-control" placeholder="Phone">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="file" name="cv" class="form-control" placeholder="Input File">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <span class="fa-solid fa-file"></span>
+                                    <span class="fas fa-lock"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group d-flex">
-                            <label>Active:</label>
+                            <label>Role:</label>
                             <div class="custom-control custom-radio ml-5">
                                 <input class="custom-control-input" value="1" type="radio" id="active" name="role">
                                 <label for="active" class="custom-control-label">Có</label>

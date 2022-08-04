@@ -30,7 +30,7 @@ session_start();
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">User</a>
                     <ul class="collapse" id="homeSubmenu">
                         <li>
-                            <a href="./User/list.php" class="sidebar__link w-50" aria-expanded="false">List User</a>
+                            <a href="./listUser.php" class="sidebar__link w-50" aria-expanded="false">List User</a>
                         </li>
                     </ul> 
                 </li>
@@ -38,7 +38,7 @@ session_start();
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar__link dropdown-toggle">Cv</a>
                     <ul class="collapse" id="pageSubmenu">
                         <li>
-                            <a href="./CV/list.php" class="sidebar__link w-50">List CV</a>
+                            <a href="./listCv.php" class="sidebar__link w-50">List CV</a>
                         </li>
                     </ul> 
                 </li>

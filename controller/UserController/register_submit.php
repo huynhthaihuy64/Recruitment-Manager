@@ -10,7 +10,7 @@ if (isset($_POST['register'])) {
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
     $specialChars = preg_match('@[^\w]@', $password);
-    // $password = md5($password);
+    $password = md5($password);
     if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
         echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
     } else {

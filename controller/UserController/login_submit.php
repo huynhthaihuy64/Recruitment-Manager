@@ -3,6 +3,14 @@ session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $number = preg_match('@[0-9]@', $password);
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+    $password = md5($password);
+    if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
+        echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+    }
     if ($_POST['email'] == null) {
         echo "Please Enter your email";
     } else {
@@ -11,7 +19,7 @@ if (isset($_POST['login'])) {
     if ($_POST['password'] == null) {
         echo "Please Enter your password";
     } else {
-        $p = $_POST['password'];
+        $p = $password;
     }
     if ($u && $p) {
         $conn = mysqli_connect("localhost", 'root', "", "qltd");
@@ -26,7 +34,7 @@ if (isset($_POST['login'])) {
             $_SESSION['email'] = $email;
             echo "<SCRIPT> //not showing me this
             alert('Login success')
-            window.location.replace('http://localhost/Recruitment-Manager/views/admin/index.php');
+            window.location.replace('http://localhost:83/Recruitment-Manager/views/admin/index.php');
             </SCRIPT>";
             die();
         }

@@ -10,7 +10,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List CV</title>
-    <link rel="stylesheet" href="../../../Public/css/main.css">
+    <link rel="stylesheet" href="../../Public/css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
@@ -21,7 +21,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
             <div class="sidebar mt-5">
                 <div>
                     <a href="./index.php" class="sidebar__logo">
-                        <img src="../../../Public/img/mor.jpg.png" alt="Insullusion" class="sidebar__logo-icon">
+                        <img src="../../Public/img/mor.jpg.png" alt="Insullusion" class="sidebar__logo-icon">
                     </a>
                     <div class="sidebar__toggle" id="sidebar-toggle">
                         <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -63,11 +63,11 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
-                    $sn = 1;
+                    $id = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $sn; ?></td>
+                            <td><?php echo $data['id']; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['phone'] ?? ''; ?></td>
@@ -81,17 +81,19 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                                 }
                                 ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
+                                <a class="btn btn-primary btn-sm" href="./edit.php/id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="./edit.php/id=<?php echo "$sn"  ?>">
+                                <a class="btn btn-danger btn-sm" href="./edit.php/id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
-                            <td></td>
+                            <td><a class="btn btn-success btn-sm" href="../../controller/Cv/sendmail.php">
+                                    Send Mail
+                                </a></td>
                         </tr>
                     <?php
-                        $sn++;
+                        $id++;
                     }
                 } else { ?>
                     <tr>

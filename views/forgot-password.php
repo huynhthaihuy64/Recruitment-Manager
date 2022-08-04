@@ -1,3 +1,22 @@
+<?php 
+    session_start();
+
+    if(isset($_SESSION['user'])){
+        header('Location:login.php');
+        exit();
+    }
+    $hostName = "localhost";
+$userName = "root";
+$password = "";
+$databaseName = "qltd";
+$conn = new mysqli($hostName, $userName, $password, $databaseName);
+$error = '';
+$success = '';
+if(isset($_SESSION['success'])){
+    $success = $_SESSION['success'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +37,7 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
-                <form action="../Controller/UserController/reset_password.php" method="get">
+                <form action="../controller/UserController/forgot_password.php" method="POST">
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">

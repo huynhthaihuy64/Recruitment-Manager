@@ -1,3 +1,7 @@
+<?php
+include '../../controller/Cv/show.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +21,17 @@
                     <a href="#" class="h1"><b>Edit CV</b></a>
                 </div>
                 <div class="card-body">
-                    <form action="../../controller/Cv/update.php" method="POST">
+                    <form action="../../controller/Cv/update.php" method="POST" enctype="multipart/form-data">
                         <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <input type="text" name="id" class="form-control" value="<?php echo $id ?>">
+                            <div class=" input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" name="name" class="form-control" value="<?php echo $name ?> ">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -27,7 +39,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" value="<?php echo $email ?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -35,7 +47,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="phone" class="form-control" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" value="<?php echo $phone ?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <i class="fa-solid fa-phone"></i>
@@ -43,7 +55,15 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="file" name="cv" class="form-control" placeholder="Input File">
+                            <input type="text" name="position" class="form-control" value="<?php echo $position ?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa-solid fa-plus"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" name="file" class="form-control">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fa-solid fa-file"></span>
@@ -53,11 +73,11 @@
                         <div class="form-group d-flex">
                             <label>Active:</label>
                             <div class="custom-control custom-radio ml-5">
-                                <input class="custom-control-input" value="1" type="radio" id="active" name="role">
+                                <input class="custom-control-input" value="0" type="radio" id="active" name="role" <?php echo $active == 0 ? 'checked' : '' ?>>
                                 <label for="active" class="custom-control-label">Có</label>
                             </div>
                             <div class="custom-control custom-radio ml-5">
-                                <input class="custom-control-input" value="0" type="radio" id="no_active" name="role">
+                                <input class="custom-control-input" value="1" type="radio" id="no_active" name="role" <?php echo $active == 1 ? 'checked' : '' ?>>
                                 <label for="no_active" class="custom-control-label">Không</label>
                             </div>
                         </div>

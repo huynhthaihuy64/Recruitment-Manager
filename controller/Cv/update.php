@@ -1,24 +1,24 @@
 <?php
-require "C:\laragon\www\Recruitment-Manager\Database\connect.php";
 
-if (isset($_POST['register'])) {
+$conn = mysqli_connect("localhost", "root", "", "qltd");
 
-    $username = $_POST['name'];
+if (isset($_POST["update"])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password = md5($password);
+    $phone = $_POST['phone'];
+    $position = $_POST['position'];
+    $pname = rand(1000, 10000) . "-" . $_FILES["file"]["name"];
+    $active = $_POST['role'];
 
-    try {
-        $sql = "INSERT INTO users (name, email, password,role) VALUES ('$username', '$email', '$password',1)";
-        $pdo->exec($sql);
-        echo "<SCRIPT> //not showing me this
-            alert('Register Success')
-            window.location.replace('http://localhost/Recruitment-Manager/index.php');
+    $sql = "UPDATE cvs SET name = '$name', email = '$email', phone = '$phone', position= '$position', file = '$pname', active = '$active' WHERE id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_query($conn, $sql)) {
+        echo "<SCRIPT>
+            alert('Update Success')
+            window.location.replace('http://localhost/Recruitment-Manager/views/admin/listCv.php');
             </SCRIPT>";
-    } catch (PDOException $e) {
-        die("ERROR: Không thể thực thi $sql. " . $e->getMessage());
+    } else {
+        echo $id, $name, $email, $phone, $position, $pname, $active;
     }
-
-    // Đóng kết nôi
-    unset($pdo);
 }

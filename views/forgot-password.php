@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,7 @@
             </div>
             <div class="card-body">
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
-                <form action="../Controller/UserController/reset_password.php" method="get">
+                <form action="../controller/UserController/forgot_password.php" method="POST">
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">

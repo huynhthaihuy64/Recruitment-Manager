@@ -3,10 +3,25 @@ require "C:\laragon\www\Recruitment-Manager\Database\connect.php";
 
 if (isset($_POST["upload"])) {
     $name = $_POST['name'];
+    if (empty($name)) {
+        echo "Name is required <br/>";
+    } else {
+        $name = $_POST['name'];
+    }
     $email = $_POST['email'];
+    if (empty($email)) {
+        echo "email is required <br/>";
+    } else {
+        $email = $_POST['email'];
+    }
     $phone = $_POST['phone'];
     $position = $_POST['position'];
     $date = $_POST['date'];
+    if (empty($date)) {
+        echo "Date is required <br/>";
+    } else {
+        $date = $_POST['date'];
+    }
 
     $pname = rand(1000, 10000) . "-" . $_FILES["cv"]["name"];
     $tname = $_FILES["cv"]["tmp_name"];

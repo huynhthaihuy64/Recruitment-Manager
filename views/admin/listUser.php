@@ -54,6 +54,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\UserController\list.php';
             </div>
         </div>
     </div>
+    </div>
     <h1 class="text-center mt-5">List User</h1>
     <div class="container mt-5">
         <table class="table table-striped">
@@ -71,24 +72,32 @@ include 'C:\laragon\www\Recruitment-Manager\controller\UserController\list.php';
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
+                    $id = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $data['id']; ?></td>
+                            <td><?php echo $id; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['password'] ?? ''; ?></td>
-                            <td><?php echo $data['role'] ?? ''; ?></td>
+                            <td><?php
+                                if ($data['role'] == 1) {
+                                    echo '<span class="btn btn-danger btn-xs">NO</span>';
+                                } else {
+                                    echo '<span class="btn btn-success btn-xs">YES</span>';
+                                }
+                                ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./editUser.php/id=<?php echo $data['id']  ?>">
+                                <a class="btn btn-primary btn-sm" href="./editUser.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a href="#" class="btn btn-danger btn-sm">
+                                <a class="btn btn-danger btn-sm" href="../../controller/UserController/delete.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
                         </tr>
                     <?php
+                        $id++;
                     }
                 } else { ?>
                     <tr>

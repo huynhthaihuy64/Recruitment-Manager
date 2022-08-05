@@ -37,27 +37,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="icheck-primary">
-                                    <input type="checkbox" id="remember">
-                                    <label for="remember">
-                                        Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- /.col -->
-                            <div class="col-4">
-                                <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
-                            </div>
-                            <!-- /.col -->
+                            <div class="row">
+                        <div class="col-12">
+                            <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
                         </div>
+                        <!-- /.col -->
+                    </div>
                     </form>
 
                     <div class="text-center mt-3 mb-3">
                         <a href="./forgot-password.php" class="btn btn-block btn-danger">
                             <i class="fa-solid fa-key mr-2"></i>Forgot password
                         </a>
+                    </div>
+                    <div class="text-center mt-3 mb-3">
+                        Not yet a member? <a href="./register.php">Register Now</a>
                     </div>
                 </div>
                 <!-- /.card-body -->

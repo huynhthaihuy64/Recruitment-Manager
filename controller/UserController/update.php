@@ -1,27 +1,31 @@
 <?php
-require "C:\laragon\www\Recruitment-Manager\Database\connect.php";
 
-if (isset($_POST['update'])) {
+$conn = mysqli_connect("localhost", "root", "", "qltd");
 
+if (isset($_POST["update"])) {
     $id = $_POST['id'];
-    echo $id;
-    //     $username = $_POST['name'];
-    //     $email = $_POST['email'];
-    //     $password = $_POST['password'];
-    //     $role = $_POST['role'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $number = preg_match('@[0-9]@', $password);
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+    $password = md5($password);
+    $role = $_POST['role'];
 
-    //     try {
-    //         // $sql = "INSERT INTO users (name, email, password,role) VALUES ('$username', '$email', '$password',1)";
-    //         $sql = "UPDATE users SET name='$name' WHERE id='$id'";
-    //         $pdo->exec($sql);
-    //         echo "<SCRIPT> //not showing me this
-    //             alert('Register Success')
-    //             window.location.replace('http://localhost/Recruitment-Manager/index.php');
-    //             </SCRIPT>";
-    //     } catch (PDOException $e) {
-    //         die("ERROR: Không thể thực thi $sql. " . $e->getMessage());
-    //     }
-
-    //     // Đóng kết nôi
-    //     unset($pdo);
+    if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
+        echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+    } else {
+        $sql = "UPDATE users SET name = '$name', email = '$email', password = '$password', role = '$role' WHERE id = '$id'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_query($conn, $sql)) {
+            echo "<SCRIPT>
+            alert('Update Success')
+            window.location.replace('http://localhost/Recruitment-Manager/views/admin/listUser.php');
+            </SCRIPT>";
+        } else {
+            echo $id, $name, $email, $password, $role;
+        }
+    }
 }

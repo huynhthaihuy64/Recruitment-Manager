@@ -1,3 +1,7 @@
+<?php
+session_start();
+include '../controller/UserController/register_submit.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register Page</title>
-
+    <style>
+        .error {
+            color: #FF0000;
+        }
+    </style>
     <link rel="stylesheet" href="../Public/css/register.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
@@ -17,11 +25,9 @@
                 <a href="#" class="h1"><b>Register</b></a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Register a new member</p>
-
-                <form action="../Controller/UserController/register_submit.php" method="POST">
+                <form method="post" action="../controller/UserController/register_submit.php">
                     <div class="input-group mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="Full name">
+                        <input type="text" name="name" class="form-control" placeholder="Full name" require>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -29,7 +35,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email" require>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -37,7 +43,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password" requi>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

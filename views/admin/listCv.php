@@ -65,7 +65,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>CV</th>
+                    <th>File</th>
                     <th>Active</th>
                     <th>Update</th>
                     <th>Send Mail</th>
@@ -75,11 +75,11 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
-                    $i = 1;
+                    $id = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $i; ?></td>
+                            <td><?php echo $id; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['phone'] ?? ''; ?></td>
@@ -93,19 +93,19 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                                 }
                                 ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./editCv.php/id=<?php echo "$i"  ?>">
+                                <a class="btn btn-primary btn-sm" href="./editCv.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a href="#" class="btn btn-danger btn-sm">
+                                <a class="btn btn-danger btn-sm" href="../../controller/Cv/delete.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
-                            <td><a class="btn btn-success btn-sm" href="#">
+                            <td><a class="btn btn-success btn-sm" href="../../controller/Cv/sendmail.php?email=<?php echo $data['email'] ?>">
                                     Send Mail
                                 </a></td>
                         </tr>
                     <?php
-                        $i++;
+                        $id++;
                     }
                 } else { ?>
                     <tr>

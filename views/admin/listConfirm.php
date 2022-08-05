@@ -56,7 +56,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Schedule\listConfirm.php'
             </div>
         </div>
     </div>
-    <h1 class="text-center mt-5">List Cv</h1>
+    <h1 class="text-center mt-5">List Confirm</h1>
     <div class="container mt-5">
         <table class="table table-striped">
             <thead>
@@ -67,34 +67,38 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Schedule\listConfirm.php'
                     <th>Date</th>
                     <th>Update</th>
                     <th>Send Mail</th>
-                    <th>&nbsp;</th>
+                    <th>Accept Interview</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 if (is_array($fetchData)) {
-                    $i = 1;
+                    $id = 1;
                     foreach ($fetchData as $data) {
                 ?>
                         <tr>
-                            <td><?php echo $i; ?></td>
+                            <td><?php echo $id; ?></td>
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['date'] ?? ''; ?></td>
                             <td style="width: 100px">
-                                <a class="btn btn-primary btn-sm" href="./editCv.php/id=<?php echo "$i"  ?>">
-                                    <i class="fa fa-pencil-square-o"></i>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm">
+                                <a class="btn btn-danger btn-sm" href="../../controller/Schedule/delete.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>
-                            <td><a class="btn btn-success btn-sm" href="#">
-                                    Send Mail
+                            <td><a class="btn btn-success btn-sm col-5" href="../../controller/Schedule/sendmail_pass.php?email=<?php echo $data['email'] ?>">
+                                    Pass
+                                </a>
+                                <a class=" btn btn-danger btn-sm col-5" href="../../controller/Schedule/sendmail_fail.php?email=<?php echo $data['email'] ?>">
+                                    Fail
+                                </a>
+                            </td>
+                            <td><a class="btn btn-info btn-sm col-12" href="../../controller/Schedule/accept_interview.php?email=<?php echo $data['email'] ?>&date=<?php echo $data['date'] ?>">
+                                    Accept Interview
                                 </a></td>
                         </tr>
                     <?php
-                        $i++;
+                        $id++;
                     }
                 } else { ?>
                     <tr>

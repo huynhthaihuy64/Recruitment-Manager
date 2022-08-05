@@ -72,9 +72,9 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Schedule\listConfirm.php'
             </thead>
             <tbody>
                 <?php
-                if (is_array($fetchData)) {
+                if (is_array($row)) {
                     $id = 1;
-                    foreach ($fetchData as $data) {
+                    foreach ($row as $data) {
                 ?>
                         <tr>
                             <td><?php echo $id; ?></td>
@@ -103,7 +103,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Schedule\listConfirm.php'
                 } else { ?>
                     <tr>
                         <td colspan="8">
-                            <?php echo $fetchData; ?>
+                            <?php echo $row; ?>
                         </td>
                     <tr>
                     <?php

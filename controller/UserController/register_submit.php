@@ -1,17 +1,30 @@
 <?php
 require "C:\laragon\www\Recruitment-Manager\Database\connect.php";
 
-if (isset($_POST['register'])) {
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $emailErr = '';
+    $nameErr = '';
+    $passErr = '';
+    $username = '';
+    $email = '';
+    $password = '';
     $username = $_POST['name'];
     if (empty($username)) {
-        echo "Name is required <br/>";
+        $nameErr = "Name is required <br/>";
+        echo "<SCRIPT>
+            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+            </SCRIPT>";
+        exit();
     } else {
         $username = $_POST['name'];
     }
     $email = $_POST['email'];
     if (empty($email)) {
-        echo "email is required <br/>";
+        $emailErr = "email is required <br/>";
+        echo "<SCRIPT>
+            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+            </SCRIPT>";
+        exit();
     } else {
         $email = $_POST['email'];
     }
@@ -22,7 +35,11 @@ if (isset($_POST['register'])) {
     $specialChars = preg_match('@[^\w]@', $password);
     $password = md5($password);
     if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
-        echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+        $passErr =  "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+        echo "<SCRIPT>
+            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+            </SCRIPT>";
+        exit();
     } else {
         try {
             $sql = "INSERT INTO users (name, email, password,role) VALUES ('$username', '$email', '$password',1)";

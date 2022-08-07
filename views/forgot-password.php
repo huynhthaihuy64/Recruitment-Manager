@@ -1,5 +1,14 @@
 <?php
 session_start();
+$conn = mysqli_connect("localhost", "root", "", "qltd");
+$error = '';
+$success= '';
+if(isset($_SESSION['errors'])){
+    $error = $_SESSION['errors'];
+}
+if(isset($_SESSION['success'])){
+    $success = $_SESSION['success'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +39,16 @@ session_start();
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <?php if(!empty($error)){
+                            echo "<div class='text-danger'>$error</div>";
+                        }?>
+                        <?php 
+                            if(!empty($success)){
+                                echo "<div class='text-success>$success</div>";
+                            }
+                        ?>
                     </div>
                     <div class="row">
                         <div class="col-12">

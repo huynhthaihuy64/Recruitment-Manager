@@ -2,6 +2,15 @@
 session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
+    if (empty($email)) {
+        $emailErr = "email is required <br/>";
+        echo "<SCRIPT>
+            window.location.replace('http://localhost:83/Recruitment-Manager/views/login.php');
+            </SCRIPT>";
+        exit();
+    } else {
+        $email = $_POST['email'];
+    }
     $password = $_POST['password'];
     $number = preg_match('@[0-9]@', $password);
     $uppercase = preg_match('@[A-Z]@', $password);

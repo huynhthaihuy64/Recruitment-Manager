@@ -1,6 +1,12 @@
 <?php
 session_start();
 include '../controller/UserController/register_submit.php';
+$conn = mysqli_connect("localhost", "root", "", "qltd");
+$nameErr = '';
+if(isset($_SESSION['name'])){
+    $nameErr = $_SESSION['name'];
+}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +32,7 @@ include '../controller/UserController/register_submit.php';
             </div>
             <div class="card-body">
                 <form method="post" action="../controller/UserController/register_submit.php">
+
                     <div class="input-group mb-3">
                         <input type="text" name="name" class="form-control" placeholder="Full name" require>
                         <div class="input-group-append">
@@ -34,6 +41,9 @@ include '../controller/UserController/register_submit.php';
                             </div>
                         </div>
                     </div>
+                    <div class="form-group"><?php if(!empty($nameErr)){
+                        echo "<div class='error'>$nameErr</div>";
+                    } ?></div>
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email" require>
                         <div class="input-group-append">
@@ -42,14 +52,20 @@ include '../controller/UserController/register_submit.php';
                             </div>
                         </div>
                     </div>
+                    <div class="form-group"><?php if(!empty($nameErr)){
+                        echo "<div class='error'>$nameErr</div>";
+                    } ?></div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" requi>
+                        <input type="password" name="password" class="form-control" placeholder="Password" require>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
+                    <div class="form-group"><?php if(!empty($error)){
+                        echo "<div class='error'>$error</div>";
+                    } ?></div>
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">

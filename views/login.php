@@ -37,6 +37,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group"><?php if(!empty($error)){
+                        echo "<div class='error'>$error</div>";
+                    } ?></div>
                             <div class="row">
                         <div class="col-12">
                             <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>

@@ -22,7 +22,7 @@
 
                     <form action="../Controller/Cv/submit_cv.php" method="POST" enctype="multipart/form-data">
                         <div class="input-group mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Name">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="phone" class="form-control" placeholder="Phone">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <i class="fa-solid fa-phone"></i>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="file" name="cv" class="form-control" placeholder="Input File">
+                            <input type="file" name="cv" class="form-control" placeholder="Input File" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fa-solid fa-file"></span>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="position" class="form-control" placeholder="Position">
+                            <input type="text" name="position" class="form-control" placeholder="Position" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fa-solid fa-plus"></span>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="date" name="date" class="form-control" placeholder="Position">
+                            <input type="date" name="date" class="form-control" placeholder="Position" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fa-solid fa-calendar"></span>

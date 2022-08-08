@@ -83,6 +83,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                             <td><?php echo $data['name'] ?? ''; ?></td>
                             <td><?php echo $data['email'] ?? ''; ?></td>
                             <td><?php echo $data['phone'] ?? ''; ?></td>
+                            <!-- <td><img height="50px" src="../../Public/img/<?php echo $data['file']; ?>"></td> -->
                             <td><?php echo $data['file'] ?? ''; ?></td>
                             <td><?php
                                 //  echo $data['active'] ?? '';
@@ -92,7 +93,7 @@ include 'C:\laragon\www\Recruitment-Manager\controller\Cv\list.php';
                                     echo '<span class="btn btn-success btn-xs">YES</span>';
                                 }
                                 ?></td>
-                            <td style="width: 100px">
+                            <td style=" width: 100px">
                                 <a class="btn btn-primary btn-sm" href="./editCv.php?id=<?php echo $data['id']  ?>">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>

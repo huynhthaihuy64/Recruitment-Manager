@@ -26,14 +26,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($_POST['email'])){
         $_SESSION['errors'] = 'Please enter your email';
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/forgot-password.php');
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/forgot-password.php');
             </SCRIPT>";
         exit();
     }
     if(!empty($errors)){
         $_SESSION['errors'] = 'Email address does not exist';
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/forgot-password.php');
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/forgot-password.php');
             </SCRIPT>";
         exit();
     }
@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(empty($account)){
             $_SESSION['errors'] = 'Email address does not exist';
             echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/forgot-password.php');
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/forgot-password.php');
             </SCRIPT>";
             exit();
         }
@@ -61,10 +61,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }else{
             $_SESSION['errors'] = 'An error has occurred unable to retrieve the password';
             echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/forgot-password.php');
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/forgot-password.php');
             </SCRIPT>";
             exit();
         }
     }
 }
- ?>

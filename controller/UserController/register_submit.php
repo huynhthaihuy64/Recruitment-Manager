@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($username)) {
         $nameErr = "Name is required <br/>";
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+        alert('$nameErr')
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/register.php');
             </SCRIPT>";
         exit();
     } else {
@@ -22,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($email)) {
         $emailErr = "email is required <br/>";
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+        alert('$emailErr')
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/register.php');
             </SCRIPT>";
         exit();
     } else {
@@ -37,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
         $passErr =  "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/register.php');
+        alert('$passErr')
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/register.php');
             </SCRIPT>";
         exit();
     } else {

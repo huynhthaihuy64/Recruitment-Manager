@@ -5,7 +5,7 @@ if (isset($_POST['login'])) {
     if (empty($email)) {
         $emailErr = "email is required <br/>";
         echo "<SCRIPT>
-            window.location.replace('http://localhost:83/Recruitment-Manager/views/login.php');
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/login.php');
             </SCRIPT>";
         exit();
     } else {
@@ -18,10 +18,17 @@ if (isset($_POST['login'])) {
     $specialChars = preg_match('@[^\w]@', $password);
     $password = md5($password);
     if (strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
-        echo "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+        $passErr =  "Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";
+        echo "<SCRIPT>
+        alert('$passErr')
+            window.location.replace('http://localhost:80/Recruitment-Manager/views/register.php');
+            </SCRIPT>";
     }
     if ($_POST['email'] == null) {
-        echo "Please Enter your email";
+        echo "<SCRIPT>
+            alert('Please enter your email')
+            window.location.replace('http://localhost/Recruitment-Manager/views/login.php');
+            </SCRIPT>";
     } else {
         $u = $_POST['email'];
     }

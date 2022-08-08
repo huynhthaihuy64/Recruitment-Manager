@@ -22,7 +22,7 @@
 
                     <form action="../Controller/UserController/login_submit.php" method="POST">
                         <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -30,22 +30,19 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"><?php if(!empty($error)){
-                        echo "<div class='error'>$error</div>";
-                    } ?></div>
-                            <div class="row">
-                        <div class="col-12">
-                            <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
-                    </div>
                     </form>
 
                     <div class="text-center mt-3 mb-3">

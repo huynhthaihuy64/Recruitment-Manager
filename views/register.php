@@ -3,10 +3,9 @@ session_start();
 include '../controller/UserController/register_submit.php';
 $conn = mysqli_connect("localhost", "root", "", "qltd");
 $nameErr = '';
-if(isset($_SESSION['name'])){
+if (isset($_SESSION['name'])) {
     $nameErr = $_SESSION['name'];
 }
-?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,38 +33,32 @@ if(isset($_SESSION['name'])){
                 <form method="post" action="../controller/UserController/register_submit.php">
 
                     <div class="input-group mb-3">
-                        <input type="text" name="name" class="form-control" placeholder="Full name" require>
+                        <input type="text" name="name" class="form-control" placeholder="Full name" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group"><?php if(!empty($nameErr)){
-                        echo "<div class='error'>$nameErr</div>";
-                    } ?></div>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email" require>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group"><?php if(!empty($nameErr)){
-                        echo "<div class='error'>$nameErr</div>";
-                    } ?></div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" require>
+                        <input type="password" name="password" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" require>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group"><?php if(!empty($error)){
-                        echo "<div class='error'>$error</div>";
-                    } ?></div>
+                    <div class="form-group"><?php if (!empty($error)) {
+                                                echo "<div class='error'>$error</div>";
+                                            } ?></div>
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
